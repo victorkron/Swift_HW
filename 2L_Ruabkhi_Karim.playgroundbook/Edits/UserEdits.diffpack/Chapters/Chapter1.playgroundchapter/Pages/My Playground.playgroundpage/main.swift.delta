@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Задание 1 :
+print("Задание 1:")
+print("------------start------------")
+func isEven(_ number: Int) -&gt; Bool {
+    let output: Bool
+    if (number % 2 == 0) {
+        output = true
+    } else {
+        output = false
+    }
+    return output
+}
+var a1: Int = 27
+var b1: Int = 28
+print("Число \(a1) четное? Ответ: \(isEven(a1) ? "да" : "нет")")
+print("Число \(b1) четное? Ответ: \(isEven(b1) ? "да" : "нет")")
+print("-------------end-------------\n\n")
+
+// Задание 2 :
+print("Задание 2:")
+print("------------start------------")
+func dividedBy3(_ number: Int) -&gt; Bool {
+    let output: Bool
+    if (number % 3 == 0) {
+        output = true
+    } else {
+        output = false
+    }
+    return output
+}
+var a2: Int = 27
+var b2: Int = 28
+print("Число \(a2) делится на 3? Ответ: \(dividedBy3(a2) ? "да" : "нет")")
+print("Число \(b2) делится на 3? Ответ: \(dividedBy3(b2) ? "да" : "нет")")
+print("-------------end-------------\n\n")
+
+// Задание 3 :
+print("Задание 3:")
+print("------------start------------")
+var arr: [Int] = []
+let n: Int = 100
+for i in 0 ... n - 1 {
+    arr.append(i)
+}
+print("Массив:\n\t\(arr)")
+print("-------------end-------------\n\n")
+
+// Задание 4 :
+print("Задание 4:")
+print("------------start------------")
+arr = arr.filter({ (i) -&gt; Bool in !isEven(i) &amp;&amp; !dividedBy3(i) })
+print("Массив не делящихся на 2 и 3:\n\t\(arr)")
+print("-------------end-------------\n\n")
+
+// Задание 5 :
+print("Задание 5:")
+print("------------start------------")
+func fibonacciAdd(array arr: inout [Int]) {
+    if (arr.count == 0) {
+        arr.append(0)
+    } else if (arr.count == 1) {
+        arr.append(1)
+    } else {
+        arr.append(arr[arr.count-1] + arr[arr.count-2])
+    }
+}
+arr = []
+while (arr.count &lt; 50) {
+    fibonacciAdd(array: &amp;arr)
+}
+print("Массив Фибоначчи:\n\t\(arr)")
+print("-------------end-------------\n\n")
+
+// Задание 6 :
+print("Задание 6:")
+print("------------start------------") 
+arr = []
+func addSimpleNum(array arr: inout [Int]) {
+    if (arr.count == 0) {
+        arr.append(2)
+    } else {
+        let length = arr.count
+        var newItem: Int = arr.last! + 1
+        var test: Bool = true
+        while (arr.count &lt; length + 1) {
+            for i in 0 ... arr.count - 1 where test {
+                if (newItem % arr[i] == 0) {
+                    newItem += 1
+                    break
+                } else if (i == arr.count - 1) {
+                    arr.append(newItem)
+                }
+            }
+        }
+    }
+}
+
+while (arr.count &lt; 100) {
+    addSimpleNum(array: &amp;arr)
+}
+print("Массив простых чисел:\n\t\(arr)")
+print("-------------end-------------\n\n")
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 2601}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
